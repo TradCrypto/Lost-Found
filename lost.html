@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost/Found </title>
+    <link rel="stylesheet" href="./lost.css">
+</head>
+<body>
+    <header>
+        <h1>Lost/Found - Find lost items immediately</h1>
+    </header>
+
+    <section class="report-section">
+        <h2>Report a Lost Item</h2>
+        <form id="reportForm">
+            <input type="text" id="item-name" placeholder="Item Name" required>
+            <input type="text" id="item-description" placeholder="Description" required>
+            <input type="text" id="item-location" placeholder="School" required>
+            <input type="date" id="item-date" placeholder="Date (MM/DD/YYYY)" required>
+            <button type="submit">Report Item</button>
+        </form>
+    </section>
+    <section class="found-section">
+        <h2>Found Items</h2>
+        <div id="itemsList"></div>
+    </section>
+
+    <script src="./lost.js"></script>
+</body>
+</html>
