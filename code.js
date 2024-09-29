@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lostItems.forEach((item, index) => {
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('item');
+            itemDiv.title=`This is a missing item. The missing item is a/an ${item.name}`
             itemDiv.innerHTML += `
                 <h3>${item.name}</h3>
                 <p><strong>Description:</strong> ${item.description}</p>
