@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lostItems.forEach((item, index) => {
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('item');
-            itemDiv.innerHTML = `
+            itemDiv.innerHTML += `
                 <h3>${item.name}</h3>
                 <p><strong>Description:</strong> ${item.description}</p>
                 <p><strong>Last seen at:</strong> ${item.location}</p>
