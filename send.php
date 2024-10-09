@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST['message']));
 
     // Prepare the email headers
-    $to = "your_email@example.com";  // Replace with your actual email address
+    $to = "exposedwealth@gmail.com";  // Replace with your actual email address
     $headers = "From: " . $email . "\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
