@@ -59,9 +59,16 @@
     </style>
 </head>
 <body>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js">
+</script>
+            <script type="text/javascript">
+  (function(){
+      emailjs.init("service_cpj8bbj");
+  })();
+</script>
     <div class="contact-form-container">
         <h1>Contact Us</h1>
-        <form id="contactForm" method="POST" action="send.php">
+        <form id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -78,25 +85,18 @@
         </form>
         <div id="response"></div>
     </div>
+        <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    <script>
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        
-        const formData = new FormData(this);
-    
-        fetch('send.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('response').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Error:', error);
+            emailjs.sendForm('service_cpj8bbj', 'template_xfa4sh3', this)
+                .then(function() {
+                    document.getElementById('response').innerHTML = "Message sent successfully!";
+                }, function(error) {
+                    console.error('Failed to send email:', error);
+                    document.getElementById('response').innerHTML = "Failed to send message.";
+                });
         });
-    });
     </script>
 </body>
 </html>
