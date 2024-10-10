@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #333333;
     color: white;
     padding: 1rem;
     width: 100%;
@@ -44,6 +44,9 @@ input {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+input:invalid {
+    box-shadow: 0 2px 8px rgba(250, 0, 0, 0.359);
 }
 
 button {
