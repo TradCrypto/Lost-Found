@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Lost and Found</title>
-    <link rel="stylesheet" href="lost.css">
+    <title>Lost/Found </title>
+    <link rel="stylesheet" href="./lost.css">
 </head>
-<body>
+<body id="page" onload="loadPage()">
     <header>
-        <h1>School Lost and Found</h1>
+        <h1>&Lopf;ost/&Fopf;ound - Find lost items immediately</h1>
     </header>
 
     <section class="report-section">
         <h2>Report a Lost Item</h2>
         <form id="reportForm">
-            <input type="text" id="item-name" placeholder="Item Name" required>
+            <input type="text" id="item-name" placeholder="Item Name" required oninput="progBar()" maxlength="20">
             <input type="text" id="item-description" placeholder="Description" required>
-            <input type="text" id="item-location" placeholder="Location" required>
-            <input type="date" id="item-date" placeholder="Date (MM/DD/YYYY)" required>
-            <button type="submit">Report Item</button>
+            <input type="text" id="item-location" placeholder="School" required>
+            <input type="date" id="item-date" required>
+            <br>
+            <button type="submit" id="submitBtn" onclick="describe()">Report Item</button>
         </form>
     </section>
 
     <section class="found-section">
         <h2>Reported Items</h2>
-        <div id="itemsList"></div>
+        <div id="itemsFoundList"></div>
+        <hr>
+        <div id="settings">
+            <hr>
+            <h3>⚙️ Settings</h3>
+            <label>Change Theme: </label><button onclick="visible1()" id="method">⬛ Change to Dark Theme</button><br><br>
+            <label>Remove Items: </label><button style="background-color: red; color: white;" onclick="deleteItems()">Remove All</button><br><br><sub>Tip: Reload Page to apply settings</sub>
+        </div>
     </section>
 
-    <script src="code.js"></script>
+    <script src="lost.js"></script>
 </body>
 </html>
