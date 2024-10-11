@@ -21,7 +21,7 @@
     <button onclick="likes()" id="click">&hearts;</button><button id="click2"></button>
     <div style="border: 1px solid black; padding: 10px; border-radius: 5px;">&hearts;: <span id="likes">0</span></div>
     <script>
-        // localStorage.setItem("likes", 0);
+        localStorage.setItem("likes", 0);
         document.getElementById('likes').innerHTML = localStorage.getItem("likes");
 
         function likes() {
